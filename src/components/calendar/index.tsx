@@ -1,6 +1,6 @@
 import { range } from 'lodash';
 import React from "react";
-import Styles from './styles.less';
+import './styles.less';
 export interface IProps {
     month: number,// 月份
     day: number,// 日期
@@ -17,28 +17,28 @@ const CalendarComponent = ({ month, day, onChange }: IProps) => {
         'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
         'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC',
     ];
-    return (<div className={Styles.Calendar}>
+    return (<div className={'Calendar'}>
         <>
             {range(0, 6).map(m => (
                 <div
-                    className={`item month ${month === m ? 'selected' : ''}`}
+                    className={`item month ${month === m ? `selected` : ''}`}
                     key={m}
                     onClick={() => onChange({ month: m, day })}
                 >
                     {monthNames[m]}
                 </div>
             ))}
-            <div className={Styles.item Styles.empty}/>
+            <div className={`item month`} />
             {range(6, 12).map(m => (
                 <div
-                    className={`item month ${month === m ? 'selected' : ''}`}
+                    className={`item month ${month === m ? `selected` : ''}`}
                     key={m}
                     onClick={() => onChange({ month: m, day })}
                 >
                     {monthNames[m]}
                 </div>
             ))}
-            <div className="item empty" />
+            <div className={`item month`} />
         </>
 
 

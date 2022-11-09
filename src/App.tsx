@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     const itemMasks = getShapeMasks();
     setItemMasks(itemMasks);
+    updateSolutions(month, day, itemMasks);
   }, []);
 
 
@@ -25,25 +26,22 @@ function App() {
   const handleChange = ({ month, day }: { month: number, day: number }) => {
     setDay(day);
     setMonth(month);
+    updateSolutions(month, day, itemMasks);
+  };
 
+  function updateSolutions(month: number, day: number, itemMasks: any[]) {
     const board = BoardShape.map(row => row.split(''));
     board[Math.floor(month / 6)][month % 6] = 'x'
     board[Math.floor((day - 1) / 7) + 2][(day - 1) % 7] = 'x';
     const solutions = solve(board, itemMasks);
     setSolutions(solutions);
-  };
-
+  }
 
   return (
     <div className="App">
       <h1>
-        Calendar Puzzle Solver
+        自动拼图
       </h1>
-      <div>
-        <a href="https://www.dragonfjord.com/product/a-puzzle-a-day/">原问题</a>
-        <a href="https://github.com/zjuasmn/calendar-puzzle-solver" style={{ marginLeft: 16 }}>Github源码</a>
-        <a href="https://jandan.net" style={{ marginLeft: 16 }}>煎蛋</a>
-      </div>
       {/*<TypeSwitch value={type} onChange={this.handleTypeChange} />*/}
       <div className="Container">
         <CalendarComponent month={month} day={day} onChange={handleChange} />
@@ -60,7 +58,7 @@ function App() {
                 className={`SolutionItem ${i === solutionIndex ? 'selected' : ''}`}
                 key={i}
                 onClick={() => {
-                  this.setState({ index: i })
+                  setSolutionIndex(i);
                   window.scrollTo({ top: 0 })
                 }}
               >

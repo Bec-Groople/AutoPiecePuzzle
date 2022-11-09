@@ -1,7 +1,7 @@
 import React from "react"
 import { flatten } from 'lodash'
 import { COLS, flip, PieceItemLayout, PieceShapes, rotate } from "../../puzzleUtil.ts";
-
+import './styles.css';
 export interface IProps {
     solution: PieceItemLayout[],// 拼图的解法
     itemMasks: any[];//每块拼图可能的拼法列表

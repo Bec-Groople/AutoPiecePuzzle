@@ -1,0 +1,52 @@
+.Solutions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.SolutionItem {
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin: 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+}
+
+.SolutionItem:hover {
+  background: #ddd;
+}
+
+.SolutionItem.selected {
+  background: #07f;
+  color: #fff;
+}
+
+.TypeSwitch {
+  display: inline-flex;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px auto 0;
+  width: auto;
+}
+
+.TypeSwitchItem {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 8px 16px;
+  background: #f0f0f0;
+  cursor: pointer;
+  color: #333;
+}
+
+.TypeSwitchItem:hover {
+  background: #ddd;
+}
+
+.TypeSwitchItem.selected {
+  background: #07f;
+  color: #fff;
+}
