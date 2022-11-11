@@ -39,17 +39,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
-        自动拼图
-      </h1>
+       
       {/*<TypeSwitch value={type} onChange={this.handleTypeChange} />*/}
       <div className="Container">
         <CalendarComponent month={month} day={day} onChange={handleChange} />
         {solutions[solutionIndex] && <CoverComponent solution={solutions[solutionIndex]} itemMasks={itemMasks} />}
       </div>
-      <div style={{ color: '#333' }}>
-        {`当前展示${month + 1}月${day}日解法${solutionIndex + 1}(共${solutions.length}种)`}
-      </div>
+     
       {solutions.length > 0
         ? (
           <div className="Solutions">

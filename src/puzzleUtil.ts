@@ -153,15 +153,20 @@ export function solve(board: string[][], itemMasks: any[]) {
     count += 1;
     const row = Math.floor(index / COLS);
     const col = index % COLS;
+
+    //所有的格子上都不为空，循环结束
     if (row >= ROWS) {
       ret.push(solution.map((s) => s!));
       return true;
     }
+    //如果格子不是空的，继续下一个格子
     if (board[row][col] === "x") {
       return dfs(index + 1);
     }
+    //格子是空的，查找合适的拼图放上面
     for (let i = 0; i < PieceShapes.length; ++i) {
       if (!solution[i]) {
+        //找到没有放过的
         for (let j = 0; j < itemMasks[i].length; ++j) {
           if (canPlace(index, i, j)) {
             place(index, i, j);
@@ -178,6 +183,5 @@ export function solve(board: string[][], itemMasks: any[]) {
 
   dfs(0);
   console.log(`搜索次数: ${count}`);
-  console.log(`solution: ${ret}`);
   return ret;
 }
