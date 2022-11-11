@@ -1,3 +1,11 @@
+自动拼图算法，效果图：
+
+
+![image](https://user-images.githubusercontent.com/64018235/201321124-7ae53906-d726-4378-8bb8-0a51911da1ea.png)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
