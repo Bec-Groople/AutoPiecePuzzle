@@ -14,8 +14,8 @@ export interface IProps {
  */
 const CalendarComponent = ({ month, day, onChange }: IProps) => {
     const monthNames = [
-        'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
-        'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC',
+        '一月', '二月', '三月', '四月', '五月', '六月',
+        '七月', '八月', '九月', '十月', '十一月', '十二月',
     ];
     return (<div className={'Calendar'}>
         <>
